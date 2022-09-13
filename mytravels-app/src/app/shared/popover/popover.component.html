@@ -1,0 +1,16 @@
+<ion-content>
+  <ion-list>
+      <ion-item>
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label class="menu-nome">{{name}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-label class="email">{{email}}</ion-label>
+      </ion-item>
+      <ion-item (click)="loggout()" rel="noopener noreferrer">
+        <ion-icon name="log-out-outline"></ion-icon>
+        <ion-label>Sair</ion-label>
+      </ion-item>
+  </ion-list>
+</ion-content>

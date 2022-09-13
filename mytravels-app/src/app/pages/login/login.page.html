@@ -1,0 +1,37 @@
+<ion-content padding>
+  <ion-grid style="height: 100%">
+    <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%">
+      <ion-col class="ion-align-self-center" size-xs="12" size-sm="6" size-xl="3" style="max-width:400px">
+        <div class="ion-text-center">
+          <img alt="Novakio" src="/assets/icon/logo.png" style="height: 12vh;min-height: 100px;" />
+        </div>
+        <div>
+          <div class="example-container">
+            <form [formGroup]="loginModel">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="seuemail@email.com" formControlName="username" name="username" required
+                  autocomplete="off">
+                <mat-error *ngIf="f.username.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" name="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+              <div class="ion-text-center">
+                <ion-button color="primary" (click)="login()">ENTRAR</ion-button>
+              </div>
+              <div class="loading-spinner" *ngIf="!dados">
+                  <mat-spinner [diameter]="50"></mat-spinner>
+              </div>
+            </form>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap';
+
+@import '@angular/material/theming';
+@include mat-core();
+
+$custom-app-primary: mat-palette($mat-blue);
+$custom-app-secondary: mat-palette($mat-indigo, A200, A400, 700);
+$custom-app-warn: mat-palette($mat-red);
+
+$custom-theme: mat-light-theme($custom-app-primary, $custom-app-secondary, $custom-app-warn);
+
+@include angular-material-theme($custom-theme);
+
+
+.button-native {
+  background-color: #016FA0 !important;
+  color: white;
+  border-radius: 4px;
+  border-color: transparent;
+  padding-top: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: 500;
+}
+
+.button-native:hover {
+  background-color: #0796d359;
+}
+
+.loading-spinner {
+  margin-top: 75px;
+}
+
+.jumbotron-heading {
+  color: #016FA0 !important;
+  font-weight: 500 !important;
+  text-decoration: underline;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+
+.titles {
+  float: left !important;
+  font-size: 16px;
+}
+
+.item {
+  border: 1px solid;
+  border-color: rgb(219, 219, 219) !important;
+  border-radius: 5px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.ion-list {
+  padding-top: 8px !important;
+  margin-bottom: 10px;
+}
+
+.aling {
+  margin-top: 13.5px;
+}
+
+.btn-primary {
+  background-color: #016FA0 !important;
+  border-color: transparent !important;
+}
+
+.btn-outline-primary {
+  border-color: #016FA0 !important;
+  color: #016FA0 !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #016FA0 !important;
+  color: white !important;
+}
+
+.color-primary {
+  color: #016FA0 !important;
+}
+
+.btn {
+  margin-right: 10px;
+}

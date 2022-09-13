@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <h1 class="jumbotron-heading d-flex justify-content-center mt-5">Relatório Veículo</h1>
+    <br>
+    <div class="d-flex justify-content-center">
+      <form class="example-form" *ngIf="veiculos">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Placa</mat-label>
+          <input type="text" name="placa" [(ngModel)]="veiculos.placa" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Renavam</mat-label>
+          <input type="text" name="renavam" [(ngModel)]="veiculos.renavam" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Tipo Veículo</mat-label>
+          <input type="text" name="tipo" [(ngModel)]="veiculos.tipo.descricao" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Marca</mat-label>
+          <input type="text" name="marca" [(ngModel)]="veiculos.marca" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Modelo</mat-label>
+          <input type="text" name="modelo" [(ngModel)]="veiculos.modelo" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Ano Fabricação</mat-label>
+          <input type="text" name="anoFabricacao" [(ngModel)]="veiculos.anoFabricacao" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Ano Modelo</mat-label>
+          <input type="text" name="anoModelo" [(ngModel)]="veiculos.anoModelo" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Exercício Doc.</mat-label>
+          <input type="text" name="exercicioDoc" [(ngModel)]="veiculos.exercicioDoc" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Cor</mat-label>
+          <input type="text" name="cor" [(ngModel)]="veiculos.cor" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Chassi</mat-label>
+          <input type="text" name="chassi" [(ngModel)]="veiculos.chassi" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Cidade Emplacado</mat-label>
+          <input type="text" name="cidadeEmplacado" [(ngModel)]="veiculos.cidadeEmplacado.nome" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Kilometragem</mat-label>
+          <input type="text" name="kilometragem" [(ngModel)]="veiculos.kilometragem" matInput readonly>
+        </mat-form-field>
+        <div class="mt-3 mb-4 d-flex justify-content-center">
+          <button type="button" class="btn btn-danger" routerLink="/veiculos">Voltar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

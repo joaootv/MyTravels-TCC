@@ -1,0 +1,82 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <h1 class="jumbotron-heading d-flex justify-content-center mt-5">Cadastrar Veículo</h1>
+    <br>
+    <div class="d-flex justify-content-center">
+      <form [formGroup]="dataModel" class="example-form">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Placa</mat-label>
+          <input type="text" name="placa" formControlName="placa" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Renavam</mat-label>
+          <input type="text" name="renavam" formControlName="renavam" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Marca</mat-label>
+          <input type="text" name="marca" formControlName="marca" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Modelo</mat-label>
+          <input type="text" name="modelo" formControlName="modelo" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Ano Fabricação</mat-label>
+          <input type="text" name="anoFabricacao" formControlName="anoFabricacao" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Ano Modelo</mat-label>
+          <input type="text" name="anoModelo" formControlName="anoModelo" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Exercício Doc.</mat-label>
+          <input type="text" name="exercicioDoc" formControlName="exercicioDoc" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Cor</mat-label>
+          <input type="text" name="cor" formControlName="cor" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Chassi</mat-label>
+          <input type="text" name="chassi" formControlName="chassi" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Cidade Emplacado</mat-label>
+          <mat-select name="cidadeEmplacado" formControlName="cidadeEmplacado">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let origem of cidades" [value]="origem.id">
+              {{origem.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Kilometragem</mat-label>
+          <input type="text" name="kilometragem" formControlName="kilometragem" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Motorista</mat-label>
+          <mat-select name="motorista" formControlName="motorista">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let origem of motoristas" [value]="origem.id">
+              {{origem.pessoa.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Tipo Veículo</mat-label>
+          <mat-select name="idTipo" formControlName="idTipo">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let origem of tipos" [value]="origem.id">
+              {{origem.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="mt-3 mb-4 d-flex justify-content-center">
+          <button type="button" class="btn btn-primary" (click)="create()">Salvar</button>
+          <button type="button" class="btn btn-danger" routerLink="/veiculos">Voltar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

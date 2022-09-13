@@ -1,0 +1,62 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <h2>Dados Transportadora</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <form class="example-form" *ngIf="transportadora">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input type="text" name="nome" [(ngModel)]="transportadora.nome" matInput readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>CNPJ ou CPF</mat-label>
+        <input type="text" name="cpfOuCnpj" [(ngModel)]="transportadora.cpfOuCnpj" matInput readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="text" name="email" [(ngModel)]="transportadora.email" matInput readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Telefones</mat-label>
+        <input type="text" name="telefones" [(ngModel)]="transportadora.telefones" matInput readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>RNTRC</mat-label>
+        <input type="text" name="RNTRC" [(ngModel)]="transportadora.rntrc" matInput readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Vencimento RNTRC</mat-label>
+        <input type="text" name="vencimentoRNTRC" [(ngModel)]="transportadora.vencimentoRNTRC" matInput readonly>
+      </mat-form-field>
+      <div *ngFor="let endereco of transportadora.enderecos; let i = index">
+        <ion-label>Endereço {{i + 1}}:</ion-label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>CEP</mat-label>
+          <input type="text" name="cep" [(ngModel)]="endereco.cep" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Cidade</mat-label>
+          <input type="text" name="cidade" [(ngModel)]="endereco.cidade.nome" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Bairro</mat-label>
+          <input type="text" name="bairro" [(ngModel)]="endereco.bairro" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Logradouro</mat-label>
+          <input type="text" name="logradouro" [(ngModel)]="endereco.logradouro" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Numero</mat-label>
+          <input type="text" name="numero" [(ngModel)]="endereco.numero" matInput readonly>
+        </mat-form-field>
+      </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

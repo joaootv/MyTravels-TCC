@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end" style="position: absolute;right: .25rem;">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close" slot="icon-only" class="fechar"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-text-center ion-justify-content-center h-100">
+    <ion-title class="title">Editar Pedagio</ion-title>
+    <form [formGroup]="dataModel" class="example-form">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <input type="text" name="descricao" formControlName="descricao" matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Num. Eixos</mat-label>
+        <input type="text" name="numEixos" formControlName="numEixos" matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Valor</mat-label>
+        <input type="text" name="valor" formControlName="valor" matInput>
+      </mat-form-field>
+      <ion-button color="primary" (click)="editar()">Salvar</ion-button>
+      <ion-button color="danger" (click)="dismiss()">Cancelar</ion-button>
+    </form>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,51 @@
+.site-header {
+  background-color: #016FA0;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.site-header a {
+  color: rgb(255, 255, 255);
+  transition: ease-in-out color .15s;
+  text-decoration: none;
+}
+
+.btn-outline-primary {
+  color: #016FA0 !important;
+  background-color: #fff;
+  background-image: none;
+  border-color: #00587d;
+}
+
+.img {
+  max-width: 80px;
+}
+
+.nav-link:hover{
+  color: #fff !important;
+  text-decoration: underline !important;
+  cursor: pointer ;
+}
+.dropdown-item:focus{
+  background-color: #016FA0;
+}
+
+.navbar .navbar-expand-lg .navbar-light .bg-light
+{
+  background-color: #016FA0 !important;
+}
+
+.dropdown-menu{
+  background-color: #016FA0 !important;
+  border: none;
+}
+
+a {
+  font-size: 16px !important;
+}
+
+.btn {
+  margin-left: 10px;
+  background-color: white;
+  color: #016FA0 !important;
+}

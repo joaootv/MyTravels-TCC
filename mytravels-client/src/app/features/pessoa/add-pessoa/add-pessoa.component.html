@@ -1,0 +1,99 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <h1 class="jumbotron-heading d-flex justify-content-center mt-5">Cadastrar Pessoa</h1>
+    <br>
+    <div class="d-flex justify-content-center">
+      <form [formGroup]="dataModel" class="example-form">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input type="text" name="nome" formControlName="nome" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>CPF</mat-label>
+          <input type="text" name="cpf" formControlName="cpf" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="text" name="email" formControlName="email" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Data de Nascimento</mat-label>
+          <input type="text" name="dtNascimento" formControlName="dtNascimento" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Mãe</mat-label>
+          <input type="text" name="mae" formControlName="mae" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Pai</mat-label>
+          <input type="text" name="pai" formControlName="pai" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Naturalidade</mat-label>
+          <mat-select name="naturalidade" formControlName="naturalidade">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let origem of cidades" [value]="origem.id">
+              {{origem.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>RG</mat-label>
+          <input type="text" name="rg" formControlName="rg" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Orgão Expedidor</mat-label>
+          <input type="text" name="orgaoExpedidor" formControlName="orgaoExpedidor" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Telefone</mat-label>
+          <input type="text" name="telefone1" formControlName="telefone1" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>UF</mat-label>
+          <mat-select name="uf" formControlName="uf">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let origem of estados" [value]="origem.id">
+              {{origem.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>CEP</mat-label>
+          <input type="text" name="cep" formControlName="cep" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Cidade</mat-label>
+          <mat-select name="cidadeId" formControlName="cidadeId">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let origem of cidades" [value]="origem.id">
+              {{origem.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Bairro</mat-label>
+          <input type="text" name="bairro" formControlName="bairro" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Logradouro</mat-label>
+          <input type="text" name="logradouro" formControlName="logradouro" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Número</mat-label>
+          <input type="text" name="numero" formControlName="numero" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Complemento</mat-label>
+          <input type="text" name="complemento" formControlName="complemento" matInput>
+        </mat-form-field>
+
+        <div class="mt-3 mb-4 d-flex justify-content-center">
+          <button type="button" class="btn btn-primary" (click)="create()">Cadastrar Pessoa</button>
+          <button type="button" class="btn btn-danger" routerLink="/motoristas">Voltar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

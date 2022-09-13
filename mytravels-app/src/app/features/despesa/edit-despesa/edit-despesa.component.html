@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end" style="position: absolute;right: .25rem;">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close" slot="icon-only" class="fechar"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-text-center ion-justify-content-center h-100">
+    <ion-title class="title">Editar Despesa</ion-title>
+    <form [formGroup]="dataModel" class="example-form">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <input type="text" name="descricao" formControlName="descricao" matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Local</mat-label>
+        <input type="text" name="local" formControlName="local" matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Preço</mat-label>
+        <input type="text" name="preco" formControlName="preco" matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Tipo Despesa</mat-label>
+        <mat-select name="tipoDespesa" formControlName="tipoDespesa">
+          <mat-option *ngFor="let state of tipoDespesas" [value]="state.value">
+            {{state.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Estado Pagamento</mat-label>
+        <mat-select name="estadoPagamento" formControlName="estadoPagamento">
+          <mat-option *ngFor="let state of statusPagamento" [value]="state.value">
+            {{state.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <ion-button color="primary" (click)="editar()">Salvar</ion-button>
+      <ion-button color="danger" (click)="dismiss()">Cancelar</ion-button>
+    </form>
+  </ion-row>
+</ion-content>

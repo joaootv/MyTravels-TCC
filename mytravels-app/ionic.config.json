@@ -1,0 +1,8 @@
+{
+  "name": "app_mytravels",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,107 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <h2>Meus Dados</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <form class="example-form" *ngIf="motorista">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input type="text" name="nome" [(ngModel)]="motorista.pessoa.nome" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>CPF</mat-label>
+          <input type="text" name="cpf" [(ngModel)]="motorista.pessoa.cpf" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Data Nascimento</mat-label>
+          <input type="text" name="dtNascimento" [(ngModel)]="motorista.pessoa.dtNascimento" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Naturalidade</mat-label>
+          <input type="text" name="naturalidade" [(ngModel)]="motorista.pessoa.naturalidade.nome" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Orgão Expedidor</mat-label>
+          <input type="text" name="orgaoExpedidor" [(ngModel)]="motorista.pessoa.orgaoExpedidor" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>UF</mat-label>
+          <input type="text" name="uf" [(ngModel)]="motorista.pessoa.uf.nome" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Pai</mat-label>
+          <input type="text" name="pai" [(ngModel)]="motorista.pessoa.pai" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Mãe</mat-label>
+          <input type="text" name="mae" [(ngModel)]="motorista.pessoa.mae" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="text" name="email" [(ngModel)]="motorista.pessoa.email" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Telefones</mat-label>
+          <input type="text" name="telefones" [(ngModel)]="motorista.pessoa.telefones" matInput readonly>
+        </mat-form-field>
+        <div *ngFor="let endereco of motorista.pessoa.enderecos; let i = index">
+          <ion-label>Endereço {{i + 1}}:</ion-label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>CEP</mat-label>
+            <input type="text" name="cep" [(ngModel)]="endereco.cep" matInput readonly>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Cidade</mat-label>
+            <input type="text" name="cidade" [(ngModel)]="endereco.cidade.nome" matInput readonly>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Bairro</mat-label>
+            <input type="text" name="bairro" [(ngModel)]="endereco.bairro" matInput readonly>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Logradouro</mat-label>
+            <input type="text" name="logradouro" [(ngModel)]="endereco.logradouro" matInput readonly>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Numero</mat-label>
+            <input type="text" name="numero" [(ngModel)]="endereco.numero" matInput readonly>
+          </mat-form-field>
+        </div>
+        <ion-label>CNH:</ion-label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Registro</mat-label>
+          <input type="text" name="cnhRegistro" [(ngModel)]="motorista.cnhRegistro" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Espelho</mat-label>
+          <input type="text" name="cnhEspelho" [(ngModel)]="motorista.cnhEspelho" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Validade</mat-label>
+          <input type="text" name="validade" [(ngModel)]="motorista.validade" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Num. Segurança</mat-label>
+          <input type="text" name="numSeguranca" [(ngModel)]="motorista.numSeguranca" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Renach</mat-label>
+          <input type="text" name="renach" [(ngModel)]="motorista.renach" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Categoria</mat-label>
+          <input type="text" name="categoria" [(ngModel)]="motorista.categoria" matInput readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Cidade de Emissão</mat-label>
+          <input type="text" name="cidadeEmissao" [(ngModel)]="motorista.cidadeEmissao.nome" matInput readonly>
+        </mat-form-field>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

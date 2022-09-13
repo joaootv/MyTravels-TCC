@@ -1,0 +1,35 @@
+.example-full-width {
+  width: 100%;
+}
+
+.loading-spinner {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-header{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #016FA0;
+  font-weight: 600;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+.container {
+  max-width: 1024px;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}

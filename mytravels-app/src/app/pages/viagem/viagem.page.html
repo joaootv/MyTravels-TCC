@@ -1,0 +1,109 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-text-center ion-justify-content-center h-100">
+    <ion-title class="title">Viagem</ion-title>
+    <form [formGroup]="dataModel" class="example-form">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Veiculos</mat-label>
+        <input type="text" name="veiculo" formControlName="veiculo" matInput readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Motorista</mat-label>
+        <input type="text" name="motorista" formControlName="motorista" matInput readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>KM Inical</mat-label>
+        <input type="text" name="kmIncial" formControlName="kmIncial" matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>KM Final</mat-label>
+        <input type="text" name="kmFinal" formControlName="kmFinal" matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Data Inical</mat-label>
+        <input type="text" name="dataInical" formControlName="dataInical" readonly matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Origem</mat-label>
+        <mat-select name="origem" formControlName="origem">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let origem of cidades" [value]="origem.id">
+            {{origem.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Destino</mat-label>
+        <mat-select name="destino" formControlName="destino">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let destino of cidades" [value]="destino.id">
+            {{destino.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Valor Frete</mat-label>
+        <input type="text" name="valorFrete" formControlName="valorFrete" matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Peso em Tonelada</mat-label>
+        <input type="text" name="pesoTonelada" formControlName="pesoTonelada" matInput>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <ion-title class="titles">Despesas:</ion-title>
+      <ion-icon name="add-circle" class="add" (click)="despesa()"></ion-icon>
+      <ion-list class="example-full-width">
+        <div *ngIf="despesas">
+          <ion-item-divider *ngFor="let despesa of despesas">
+            <ion-label>{{despesa.descricao}}</ion-label>
+            <ion-label class="preco" slot="end">R$ {{despesa.preco}}</ion-label>
+            <ion-icon name="create" slot="end" color="primary" (click)="despesaEdit(despesa.id)"></ion-icon>
+            <ion-icon name="close-circle" slot="end" color="primary" class="close" (click)="deleteDespesa(despesa)"></ion-icon>
+          </ion-item-divider>
+        </div>
+      </ion-list>
+    </form>
+    <form class="example-form teste">
+      <ion-title class="titles">Abastecimentos:</ion-title>
+      <ion-icon name="add-circle" class="add" (click)="abastecimento()"></ion-icon>
+      <ion-list class="example-full-width">
+        <div *ngIf="abastecimentos">
+          <ion-item-divider *ngFor="let abastecida of abastecimentos">
+            <ion-label>{{abastecida.tipoAbastecimento}}</ion-label>
+            <ion-label class="label">{{abastecida.litros}}Lts</ion-label>
+            <ion-label class="label cor">R$ {{abastecida.preco}}</ion-label>
+            <ion-icon name="create" slot="end" color="primary" (click)="abastecimentoEdit(abastecida.id)"></ion-icon>
+            <ion-icon name="close-circle" slot="end" color="primary" class="close" (click)="deleteAbastecimento(abastecida)"></ion-icon>
+          </ion-item-divider>
+        </div>
+      </ion-list>
+    </form>
+    <form class="example-form teste">
+      <ion-title class="titles">Pedágio:</ion-title>
+      <ion-icon name="add-circle" class="add" (click)="pedagio()"></ion-icon>
+      <ion-list class="example-full-width">
+      <div *ngIf="pedagios">
+        <ion-item-divider *ngFor="let pedagio of pedagios">
+          <ion-label>{{pedagio.descricao}}</ion-label>
+          <ion-label class="preco" slot="end">R$ {{pedagio.valor}}</ion-label>
+          <ion-icon name="create" slot="end" color="primary" (click)="pedagioEdit(pedagio.id)"></ion-icon>
+          <ion-icon name="close-circle" slot="end" color="primary" class="close" (click)="deletePedagio(pedagio)"></ion-icon>
+        </ion-item-divider>
+      </div>
+      </ion-list>
+    </form>
+    <div class="error ion-text-center" *ngIf="dialog">
+      <ion-label>{{error}}</ion-label>
+      <ion-icon name="close-circle" slot="end" (click)="dialog = false"></ion-icon>
+    </div>
+    <div class="example-form teste">
+      <ion-button color="primary" (click)="edit(1)">Salvar</ion-button>
+      <ion-button color="danger" routerLink="/home">Cancelar</ion-button>
+    </div>
+    <ion-button color="white" (click)="edit(2)" class="btn-finsh bottom">Finalizar Viagem</ion-button>
+  </ion-row>
+</ion-content>

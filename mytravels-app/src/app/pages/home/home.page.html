@@ -1,0 +1,31 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-fab
+  vertical="bottom"
+  horizontal="end"
+  slot="fixed"
+  (click)="addViagem()">
+  <ion-fab-button>
+    <ion-icon name="add" color="ligth"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <h2>Viagens</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item-divider *ngFor="let viagem of viagens; let i = index">
+          <ion-label>Nº{{i+1}} - {{viagem.origem.nome}} x {{viagem.destino.nome}}</ion-label>
+          <ion-icon name="create" slot="end" *ngIf="viagem.estadoViagem === 'ABERTA'" [routerLink]="['/viagem', viagem.id]"></ion-icon>
+          <ion-icon name="list" slot="end" *ngIf="viagem.estadoViagem === 'FINALIZADA'"[routerLink]="['/relatorio', viagem.id]"></ion-icon>
+          <ion-icon class="ban" name="ban" slot="end" *ngIf="viagem.estadoViagem === 'CANCELADA'"></ion-icon>
+        </ion-item-divider>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
